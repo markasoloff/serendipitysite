@@ -24,6 +24,21 @@ module Scratch
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
+     config.assets.precompile += [
+       'main.js', 
+       'cable.js', 
+       'application.js', 
+       'breakpoints.min.js', 
+       'browser.min.js', 
+       'jquery.min.js', 
+       'main.js', 
+       'util.js', 
+       'application.css', 
+       'fullcalendar.css', 
+       'fullcalendar.print.css', 
+       'main.css'
+ ]
+    
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
