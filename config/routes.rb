@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get "/" => "course#index"
   get "/contact" => "course#contact"
   get "/about" => "course#about"
+  
+  get 'contact-me', to: 'messages#new', as: 'new_message'
+  post 'contact-me', to: 'messages#create', as: 'create_message'
+
 
   get "/courses" => "course#courses"
   post "/contact" => "course#contact"
