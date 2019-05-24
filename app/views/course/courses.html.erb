@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Mark's CSS -->
+    <link rel="stylesheets" type="text/css" href="main.css">
+    <noscript><link rel="assets" href="assets/css/noscript.css" /></noscript>
+  </head>
+ <body class="is-preload">
+
+    <!-- Wrapper -->
+      <div id="wrapper">    <!-- Header -->
+      <header id="header">
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+          </ul>
+        </nav>
+        <div class="content">
+          <div class="inner">
+            <h1>Classes</h1>
+          </div>
+        </div>
+      </header>
+  <!-- About -->
+  <div id="main">
+
+  <article id="intro" style="padding: 0.1rem 1.5rem 0.5rem 1.5rem;">
+    <!-- <span class="image main"><img src="images/pic01.jpg" alt="" rel="images"/></span> -->
+    <% Course.all.each do |course| %>
+      <h3><%= course['name'] %></h3>
+        <p><%= course['description'] %></p>
+          <br>
+    <% end %>
+  </article>
+</div>
+    <!-- BG -->
+      <div id="bg"></div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script src="assets/js/jquery.min.js"></script>
+   <script src="assets/js/browser.min.js"></script>
+   <script src="assets/js/breakpoints.min.js"></script>
+   <script src="assets/js/util.js"></script>
+   <script src="assets/js/main.js"></script>
+  </body>
+</html>

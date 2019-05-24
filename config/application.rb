@@ -17,7 +17,7 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Serendipitysite
+module Scratch
   class Application < Rails::Application
     config.generators.assets = false
         config.generators.helper = false
@@ -45,7 +45,6 @@ module Serendipitysite
     # the framework and any gems in your application.
 
     # Don't generate system test files.
-    config.serve_static_files = true
     config.generators.system_tests = nil
   end
 end
