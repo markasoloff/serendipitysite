@@ -3,11 +3,10 @@ Rails.application.routes.draw do
   # verb "/urls" => "namespace/controllers#action"
 
   get "/" => "course#index"
-  get "/contact" => "course#contact"
   get "/about" => "course#about"
-  
-  get 'contact-me', to: 'messages#new', as: 'new_message'
-  post 'contact-me', to: 'messages#create', as: 'create_message'
+  get "/contact" => "course#contact"
+  # get '/contact', to: 'messages#new', as: 'new_message'
+  # post '/contact', to: 'messages#create', as: 'create_message'
 
 
   get "/courses" => "course#courses"

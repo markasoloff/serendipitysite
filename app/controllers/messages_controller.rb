@@ -8,11 +8,13 @@ class MessagesController < ApplicationController
 
       if @message.valid?
         MessageMailer.contact_me(@message).deliver_now
-        redirect_to messages_new_url, notice: "Message received"
+        flash[:notice] = "(( Thank you for sending us a message ))"
+        # render json: {message: "Element successfully created"} 
+        redirect_to "/"
       else
         render :new
       end
-    end
+  end
 
   private
 
