@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: scratch_production
+  database: db/production.postgresql 
   username: scratch
   password: <%= ENV['SCRATCH_DATABASE_PASSWORD'] %>
