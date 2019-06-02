@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :users
   # STEP 1: A ROUTE triggers a controller action
   # verb "/urls" => "namespace/controllers#action"
 
-  get "/" => "course#index"
+  root 'home#index'
+  
+  # get "/" => "course#index"
   get "/about" => "course#about"
   get "/contact" => "course#contact"
   # get '/contact', to: 'messages#new', as: 'new_message'
