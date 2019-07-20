@@ -1,9 +1,21 @@
 Rails.application.routes.draw do
+  resources :posts
+  resources :categories
+  devise_for :admins, path: 'admin', skip: :registrations
   devise_for :users
   # STEP 1: A ROUTE triggers a controller action
   # verb "/urls" => "namespace/controllers#action"
 
-  root 'home#index'
+  namespace :admin do
+    resources :posts
+    resources :categories
+  end
+
+  get 'admin' => 'admin/posts#index'
+
+
+  root 'course#index'
+  # root 'home#index'
   
   # get "/" => "course#index"
   get "/about" => "course#about"
@@ -17,4 +29,5 @@ Rails.application.routes.draw do
   post 'course' => 'course#create'
   patch 'course/:id' => 'course#update'
   delete 'course/:id' => 'course#destroy'
+
 end
