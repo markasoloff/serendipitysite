@@ -31,9 +31,8 @@
   <!-- About -->
   <div id="main">
 
-  <article id="intro" style="padding: 0.1rem 1.5rem 0.5rem 1.5rem;">
+  <article id="intro" style="padding: 0.1rem 1.5rem 1rem 1.5rem;">
     <!-- <span class="image main"><img src="images/pic01.jpg" alt="" rel="images"/></span> -->
-    <br>
     <% Course.all.each do |course| %>
       <h3><%= course['name'] %></h3>
         <p><%= course['description'] %></p>
