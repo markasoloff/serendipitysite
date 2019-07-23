@@ -18,7 +18,10 @@ gem 'jquery-rails'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'devise'
-gem 'rails_admin'
+gem 'activeadmin'
+gem 'cancancan'
+gem 'draper'
+gem 'pundit'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 

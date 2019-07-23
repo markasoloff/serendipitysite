@@ -4,14 +4,6 @@ class CourseController < ApplicationController
     render 'index.html.erb'
   end
 
-  # def contact
-  #   render 'contact.html'
-  # end
-
-  # def about
-  #   render 'about.html'
-  # end
-
   def create
    @course = Course.new(name: params[:name],
                   description: params[:description]
