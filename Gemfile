@@ -18,6 +18,8 @@ gem 'jquery-rails'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'devise'
+gem "hpricot"
+gem "ruby_parser"
 gem 'activeadmin'
 gem 'cancancan'
 gem 'draper'

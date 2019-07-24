@@ -4,6 +4,10 @@ class CourseController < ApplicationController
     render 'index.html.erb'
   end
 
+  def classes
+    render 'classes.html.erb'
+  end
+
   def create
    @course = Course.new(name: params[:name],
                   description: params[:description]

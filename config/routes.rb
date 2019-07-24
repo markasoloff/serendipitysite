@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  # resources :posts
   resources :categories
-  # devise_for :admins, path: 'admin', skip: :registrations
-  # devise_for :users
+  devise_for :admins, path: 'admin', skip: :registrations
+  devise_for :users
+  # devise_for :adminposts
   # STEP 1: A ROUTE triggers a controller action
   # verb "/urls" => "namespace/controllers#action"
 
-  namespace :admin do
-    resources :admin_posts
+  # namespace :admin do
+    # resources :adminposts
     resources :categories
-  end
+  # end
 
   # get 'admin' => 'admin/posts#index'
 
@@ -21,7 +21,13 @@ Rails.application.routes.draw do
   
   # get "/" => "course#index"
   get "/about" => "course#about"
+  get "/classes" => "course#classes"
   get "/contact" => "course#contact"
+  get "/adminposts" => "adminposts#index"
+  get "/adminposts/:id" => "adminposts#show"
+  get "/adminposts/new" => "adminposts#new"
+
+  post "/adminpost/new" => "adminposts#create"
   # get '/contact', to: 'messages#new', as: 'new_message'
   # post '/contact', to: 'messages#create', as: 'create_message'
 
