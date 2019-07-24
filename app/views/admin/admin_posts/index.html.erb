@@ -12,12 +12,12 @@
   </thead>
 
   <tbody>
-    <% @posts.each do |admin_post| %>
+    <% @admin_posts.each do |admin_post| %>
       <tr>
         <td><%= admin_post.title %></td>
         <td><%= admin_post.content %></td>
         <td><%= link_to 'Show', admin_post %></td>
-        <td><%= link_to 'Edit', edit_admin_post_path(admin_post) %></td>
+        <td><%= link_to 'Edit', edit_admin_admin_post_path(admin_post) %></td>
         <td><%= link_to 'Destroy', admin_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Admin Post', new_admin_post_path %>
+<%= link_to 'New Admin Post', new_admin_admin_post_path %>

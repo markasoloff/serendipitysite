@@ -1,14 +1,14 @@
-class Admin::admin_postsController < ApplicationController
+class Admin::AdminPostsController < ApplicationController
   before_action :set_admin_post, only: [:show, :edit, :update, :destroy]
 
-  def admin_post_params
-    params.require(:admin_post).permit(:title, :content, :category_id)
-  end
+  # def admin_post_params
+  #   params.require(:admin_post).permit(:title, :content)
+  # end
   
   # GET /admin/admin_posts
   # GET /admin/admin_posts.json
   def index
-    @admin_admin_posts = AdminPost.all
+    @admin_posts = AdminPost.all
   end
 
   # GET /admin/admin_posts/1
@@ -16,7 +16,6 @@ class Admin::admin_postsController < ApplicationController
   def show
   end
 
-  # GET /admin/posts/new
   def new
     @admin_post = AdminPost.new
   end
@@ -72,7 +71,7 @@ class Admin::admin_postsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def admin_post_params
-      params.fetch(:admin_post, {})
-    end
+    # def admin_post_params
+    #   params.fetch(:admin_post, {})
+    # end
 end
