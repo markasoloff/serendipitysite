@@ -28,17 +28,13 @@
           </div>
         </div>
       </header>
-  <!-- About -->
   <div id="main">
-
-  <article id="intro" style="padding: 3rem 1.5rem 1rem 1.5rem;">
-    <!-- <span class="image main"><img src="images/pic01.jpg" alt="" rel="images"/></span> -->
-    <% Course.all.each do |course| %>
-      <h3><%= course['name'] %></h3>
-        <p><%= course['description'] %></p>
-          <br>
-    <% end %>
-  </article>
+  <article id="intro" style="padding: 0rem 1.5rem 1rem 1.5rem;">
+  <% @course.each do |course| %>
+    <h3><%= course.name %></h3>
+      <p style="padding-bottom: 1rem;"><%= course.description %></p>
+  <% end %>
+ </article>
 </div>
     <!-- BG -->
       <div id="bg"></div>

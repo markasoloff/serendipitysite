@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :categories
+  # resources :categories
   devise_for :admins, path: 'admin', skip: :registrations
   devise_for :users
   # devise_for :adminposts
@@ -23,9 +23,11 @@ Rails.application.routes.draw do
   # get "/" => "course#index"
   get "/about" => "courses#about"
   get "/classes" => "courses#classes"
-  get "/classes/:id" => "courses#show"
-  get "/new" => "courses#new"
+  # get "/classes/:id" => "courses#show", as: "course"
+  
+  # get "classes/new" => "courses#new", as: "new_course"
   post "course" => "courses#create"
+  # get "/list" => "courses#list"
 
   get "/contact" => "courses#contact"
 

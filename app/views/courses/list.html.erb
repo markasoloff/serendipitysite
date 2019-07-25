@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>List of classes</title>
+</head>
+<body>
+  <table>
+      <thead>
+          <th>Name</th>
+          <th>Description</th>
+      </thead>
+      <tbody>
+  <% @course.each do |course| %>
+      <tr>
+          <td><%= course.name %></td>
+          <td><%= course.description %></td>
+      </tr>
+  <% end %>
+      </tbody>
+  </table>
+
+
+
+    <article id="intro" style="padding: 3rem 1.5rem 1rem 1.5rem;">
+      <% Course.all.each do |course| %>
+        <h3><%= course['name'] %></h3>
+          <p><%= course['description'] %></p>
+            <br>
+      <% end %>
+    </article>
+  </div>
+</body>
+</html>

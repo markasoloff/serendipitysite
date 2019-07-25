@@ -17,24 +17,36 @@ class CoursesController < ApplicationController
   end
 
   def classes
+    @course = Course.all
     render 'courses/classes.html.erb'
   end
 
   def new
     @course = Course.new
-    render 'courses/new.html.erb'
+    render 'courses/_form.html.erb'
   end
 
+
   def create
-   @course = Course.new(name: params[:name],
-                  description: params[:description]
-                 )
-   @course.save
-   render json: {message: "Element successfully created"}
+    course = Course.new(course_params)
+
+    if course.save
+        redirect_to course_path(course), alert: "Class created successfully."
+    else
+        redirect_to new_course_path, alert: "Error creating user."
+    end
+
+
+   # @course = Course.new(name: params[:name],
+   #                description: params[:description]
+   #               )
+
+   # render json: {message: "Element successfully created"}
      
    # render json: {message: "Element successfully created"}
    # redirect_to :index 
   end
+
 
   def update
     @course = Course.find(params[:id])
@@ -52,6 +64,16 @@ class CoursesController < ApplicationController
 
   def contact
     render 'courses/contact.html.erb'
+  end
+
+  def list
+    @courses = Course.all
+    render 'courses/list.html.erb'
+  end
+
+  private
+  def course_params
+    params.require(:course).permit(:name, :description)
   end
 
 end
