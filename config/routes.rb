@@ -11,30 +11,36 @@ Rails.application.routes.draw do
   # namespace :admin do
     # resources :adminposts
     resources :categories
+    resources :courses
   # end
 
   # get 'admin' => 'admin/posts#index'
 
 
-  root 'course#index'
+  root 'courses#index'
   # root 'home#index'
   
   # get "/" => "course#index"
-  get "/about" => "course#about"
-  get "/classes" => "course#classes"
-  get "/contact" => "course#contact"
+  get "/about" => "courses#about"
+  get "/classes" => "courses#classes"
+  get "/classes/:id" => "courses#show"
+  get "/new" => "courses#new"
+  post "course" => "courses#create"
+
+  get "/contact" => "courses#contact"
+
   get "/adminposts" => "adminposts#index"
   get "/adminposts/:id" => "adminposts#show"
   get "/adminposts/new" => "adminposts#new"
 
   post "/adminpost/new" => "adminposts#create"
+
   # get '/contact', to: 'messages#new', as: 'new_message'
   # post '/contact', to: 'messages#create', as: 'create_message'
 
 
   # get "/courses" => "course#courses"
   # post "/contact" => "course#contact"
-  # post 'course' => 'course#create'
   # patch 'course/:id' => 'course#update'
   # delete 'course/:id' => 'course#destroy'
 

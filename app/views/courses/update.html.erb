@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Update your classes</title>
+</head>
+<body>
+  
+  <%= form_with model: @course do %>
+    <!-- Form contents -->
+    <%= text_field(:course, :name) %>
+    <%= text_field(:course, :description) %>
+
+  <% end %>
+
+
+  </form>
+
+
+</body>
+</html>

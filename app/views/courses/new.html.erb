@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create new classes</title>
+</head>
+<body>
+
+  <h1>Create new classes</h1>
+  
+
+  <%= form_for(@course) do |f| %>
+    <span> Class name <%= f.text_field :name %> </span>
+    <br>
+    <span> Description of new class <%= f.text_area :description, size: "60x12" %> </span>
+    <%= f.submit "Create" %>
+   <% end %>
+</body>
+</html>

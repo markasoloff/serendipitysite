@@ -9,7 +9,7 @@ class AdminpostsController < ApplicationController
   # GET /admin/adminposts.json
   def index
     @adminposts = Adminpost.all
-    render 'adminposts/index.html.erb'
+    render 'adminposts/about.html.erb'
     # render json: @adminposts
   end
 
